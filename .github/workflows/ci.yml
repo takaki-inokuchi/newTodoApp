@@ -34,7 +34,7 @@ jobs:
       - name: Deploy to Firebase Hosting
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          repoToken: "${{ secrets.GITHUB_TOKEN }}"            # ← そのまま使う
-          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}"  # ← JSON を Secrets に入れたもの
+          repoToken: "${{ secrets.GITHUB_TOKEN }}" 
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}" 
           channelId: live
-          projectId: newtodoapp-88a65   # ← あなたの Firebase プロジェクトIDに置き換える
+          projectId: newtodoapp-88a65
