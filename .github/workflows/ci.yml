@@ -10,7 +10,7 @@ on:
 
 jobs:
   test:
-    name: Run Tests and Deploy
+    name: Run Tests
     runs-on: ubuntu-latest
 
     steps:
@@ -31,15 +31,16 @@ jobs:
       - name: Build project
         run: npm run build
 
+      # Firebase CLI をインストール
       - name: Install Firebase CLI
         run: npm install -g firebase-tools
 
-      # 🔑 サービスアカウントキーをセットアップ
+      # サービスアカウントキーをファイルに書き出す
       - name: Setup Firebase Service Account
         run: echo '${{ secrets.FIREBASE_SERVICE_ACCOUNT }}' > $HOME/serviceAccountKey.json
 
-      # 環境変数を指定してデプロイ
+      # Firebase に認証してデプロイ
       - name: Deploy to Firebase
+        run: firebase deploy --non-interactive --project your-project-id
         env:
           GOOGLE_APPLICATION_CREDENTIALS: $HOME/serviceAccountKey.json
-        run: firebase deploy --non-interactive --project your-project-id
