@@ -37,7 +37,10 @@ jobs:
 
       # サービスアカウントキーをファイルに書き出す
       - name: Setup Firebase Service Account
-        run: echo '${{ secrets.FIREBASE_SERVICE_ACCOUNT }}' > $HOME/serviceAccountKey.json
+        run: |
+          echo '${{ secrets.FIREBASE_SERVICE_ACCOUNT }}' > $HOME/serviceAccountKey.json
+          # デバッグ用（動作確認したら消してOK）
+          cat $HOME/serviceAccountKey.json
 
       # Firebase に認証してデプロイ
       - name: Deploy to Firebase
