@@ -1,1 +1,1 @@
-{"root":["./src/App.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/test/AppComponent.spec.tsx"],"version":"5.8.3"}
+{"root":["./src/App.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/components/ui/color-mode.tsx","./src/components/ui/provider.tsx","./src/components/ui/toaster.tsx","./src/components/ui/tooltip.tsx","./src/test/AppComponent.spec.tsx"],"version":"5.8.3"}
