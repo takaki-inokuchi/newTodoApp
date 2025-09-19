@@ -1,16 +1,25 @@
+// export default {
+//   preset: "ts-jest",
+//   testEnvironment: "jsdom",
+//   setupFilesAfterEnv: ["./jest.setup.ts"],
+//   transform: {
+//     "^.+\\.(ts|tsx)$": "ts-jest",
+//   },
+//   moduleNameMapper: {
+//     "\\.(css|less)$": "identity-obj-proxy",
+//   },
+//   globals: {
+//     'ts-jest': {
+//       tsconfig: 'tsconfig.app.json'
+//     }
+//   },
+// };
+
+
 export default {
-  preset: "ts-jest",
   testEnvironment: "jsdom",
-  setupFilesAfterEnv: ["./jest.setup.ts"],
   transform: {
-    "^.+\\.(ts|tsx)$": "ts-jest",
+    "^.+\\.tsx?$": ["ts-jest", { tsconfig: "tsconfig.json" }],
   },
-  moduleNameMapper: {
-    "\\.(css|less)$": "identity-obj-proxy",
-  },
-  globals: {
-    'ts-jest': {
-      tsconfig: 'tsconfig.app.json'
-    }
-  },
+  setupFilesAfterEnv: ["./jest.setup.ts"],
 };
