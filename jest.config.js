@@ -8,6 +8,9 @@ export default {
   moduleNameMapper: {
     "\\.(css|less)$": "identity-obj-proxy",
   },
+  globals: {
+    'ts-jest': {
+      tsconfig: 'tsconfig.app.json'
+    }
+  },
 };
-
-
