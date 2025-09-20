@@ -85,7 +85,7 @@ export const Studycontents: React.FC<StudyContensProps> = ({
               </FormControl>
 
               <ModalFooter p={0} mt={2}>
-                <Button type="submit" colorScheme="teal" mr={2}>
+                <Button type="submit" colorScheme="red" mr={2}>
                   登録
                 </Button>
                 <Button
