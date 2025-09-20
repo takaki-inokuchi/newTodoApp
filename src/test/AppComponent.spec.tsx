@@ -1,9 +1,15 @@
+jest.mock("../supabaseClient");
+
 import App from "../App";
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
+import '@testing-library/jest-dom';
 
 describe("title", () => {
-  it("should render title", () => {
+  it("should render app title", async () => {
     render(<App />);
-    expect(screen.getByText("Hello World!")).toBeInTheDocument();
+
+    await waitFor(() => {
+      expect(screen.getByText("シン・学習記録アプリ")).toBeInTheDocument();
+    });
   });
 });
